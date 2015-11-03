@@ -1,0 +1,8 @@
+
+default: -r support/env.rb -r step_definitions -r features/ ARCHIVE_RESULTS=no --profile html_report
+html_report:  --format pretty --format html --out=features_report_"<%= ENV['SELENIUM_BROWSER'] %>_<%= ENV['SELENIUM_VERSION'] %>_<%= ENV['SELENIUM_OS'] %>.html"
+all: -r support/env.rb -r step_definitions -r features/
+
+regression: -r support/env.rb -r step_definitions -r features/ -t @regression --profile html_report
+smoke: -r support/env.rb -r step_definitions -r features/ -t @smoke --profile html_report
+
