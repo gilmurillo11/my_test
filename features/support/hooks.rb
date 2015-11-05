@@ -6,8 +6,9 @@ Around('@selenium') do |scenario, block|
     ENV['SELENIUM_OS'] = /\w+/.match(caps[:platform]).to_s
     ENV['SELENIUM_BROWSER'] = caps[:browser_name]
     ENV['SELENIUM_VERSION'] = /\d+/.match(caps[:version]).to_s
-    block.call
   end
+  
+  block.call
 end
 
 Before do
