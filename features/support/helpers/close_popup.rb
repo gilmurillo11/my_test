@@ -1,3 +1,3 @@
 def closePopup
-  find('//*[@id="first-visit-exit-desktop"]').click if page.has_xpath?('//*[@id="first-visit-exit-desktop"]') && @desktop
+  find('//*[@id="exit-desktop"]').click if page.has_xpath?('//*[@id="exit-desktop"]') && @desktop
 end
